@@ -14,6 +14,7 @@ class ArtisanController extends Controller
 
     public function runCommand(Request $request)
     {
+
         $command = $request->input('command');
         try {
             Artisan::call($command);
@@ -28,5 +29,6 @@ class ArtisanController extends Controller
                 'message' => $e->getMessage()
             ]);
         }
+
     }
 }
